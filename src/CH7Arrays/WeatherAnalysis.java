@@ -10,7 +10,7 @@ public class WeatherAnalysis {
     }
         //Step 1: Ask the user for the input, the number of days
         public static void numberDays() {
-            System.out.print("How many days's temperatures? ");
+            System.out.print("How many days' temperatures? ");
             Scanner console = new Scanner(System.in);
             int days = console.nextInt();
             temperatures(days,console);
@@ -26,20 +26,23 @@ public class WeatherAnalysis {
             temps[i - 1] = currentTemp;
             tempSum += currentTemp;
         }
+        Average(days,tempSum,temps);
 }
         //Step 3: Calculate and compare the average temp. to each days temp. to see if its higher
-    public static void Average(int tempSum, int[] temps) {
-        int Averagetemp = tempSum / temps.length;
+    public static void Average(int days,int tempSum, int[] temps) {
+        double doubleDays = days;
+        double AverageTemp = tempSum / doubleDays;
+        AverageTemp = (Math.round(AverageTemp*10.0))/10.0;
         int higher = 0;
         for (int i = 1; i <= temps.length; i++) {
-            if (temps[i - 1] > Averagetemp) {
+            if (temps[i - 1] > AverageTemp) {
                 higher++;
             }
 
         }
 
         //Step 5: Print the average and the number of days above the average
-        System.out.println("Average temp = " + Averagetemp);
+        System.out.println("Average temp = " + AverageTemp);
         System.out.println(higher + " days were above average.");
     }
 }
