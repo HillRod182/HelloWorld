@@ -4,7 +4,7 @@ package CH7Arrays;
 
 import java.util.Scanner;
 
-public class WeatherAnalysis {
+public class HillaryRodriguesWeatherAnalysis {
     public static void main(String[] args) {
         numberDays();
     }
@@ -38,10 +38,9 @@ public class WeatherAnalysis {
             if (temps[i - 1] > AverageTemp) {
                 higher++;
             }
-
         }
 
-        //Step 5: Print the average and the number of days above the average
+        //Step 4: Print the average and the number of days above the average
         System.out.println("Average temp = " + AverageTemp);
         System.out.println(higher + " days were above average.");
     }
